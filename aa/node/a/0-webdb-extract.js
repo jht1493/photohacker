@@ -11,12 +11,16 @@ let fcount = 0;
 var files = fs.readdirSync(wpath);
 
 for (const fname of files) {
-  console.log('item', item);
+  console.log('fname', fname);
   if (exclude(fname)) continue;
-  
+  fcount++;
+  const src = path.resolve(wpath, fname, 'full.jpg');
+  const nfame = fname + '.jpg';
+  const dest = path.resolve(opath, nfame);
+  fs.copyFileSync(src, dest);
 }
 
-console.log('files.length', files.length);
+console.log('files.length', files.length, 'fcount', fcount);
 
 function visit_files_at_path(rpath) {
   var filenames = fs.readdirSync(rpath);
@@ -50,4 +54,3 @@ function exclude(fname) {
   if (fname === 'system') return 1;
   return 0;
 }
-

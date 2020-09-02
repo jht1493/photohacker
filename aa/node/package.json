@@ -1,5 +1,5 @@
 {
-  "name": "Z",
+  "name": "poster",
   "title": "",
   "description": "",
   "version": "0.0.1",
@@ -8,6 +8,10 @@
   "dependencies": {
     "fs-extra": "^8.1.0",
     "jimp": "^0.16.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 2
   },
   "devDependencies": {},
   "repository": {},
