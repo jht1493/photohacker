@@ -1,0 +1,7 @@
+
+
+./phantomjs-2.1.1-macosx/bin/phantomjs color-page.js 
+
+
+
+https://phantomjs.org/quick-start.html

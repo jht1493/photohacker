@@ -1,0 +1,16 @@
+{
+  "name": "Z",
+  "title": "",
+  "description": "",
+  "version": "0.0.1",
+  "homepage": "",
+  "author": "John Henry Thompson",
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "jimp": "^0.16.1"
+  },
+  "devDependencies": {},
+  "repository": {},
+  "private": true,
+  "license": "ISC"
+}
