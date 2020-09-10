@@ -1,4 +1,73 @@
 
+/Volumes/GSPOT/jht-g/PEACH/webdb/-images/531/full.jpg 
+
+# Empty
+/Volumes/GSPOT/jht-g/PEACH/webdb/-images/532 
+/Volumes/GSPOT/jht-g/PEACH/webdb/-images/533
+/Volumes/GSPOT/jht-g/PEACH/webdb/-images/534
+/Volumes/GSPOT/jht-g/PEACH/webdb/-images/535
+
+/Volumes/GSPOT/jht-g/PEACH/webdb/-images/536/full.jpg
+/Volumes/GSPOT/jht-g/PEACH/webdb/-images/537/full.jpg
+
+
+# Use Terminal to avoid truncated log
+
+in_path /Volumes/GSPOT/jht-g/projects/webdb/img/149.jpg
+err { Error: maxMemoryUsageInMB limit exceeded by at least 81MB
+    at requestMemoryAllocation (/Volumes/GSPOT/jht-g/projects/poster/photohacker/aa/node/node_modules/jpeg-js/lib/decoder.js:1051:13)
+    at constructor.getData (/Volumes/GSPOT/jht-g/projects/poster/photohacker/aa/node/node_modules/jpeg-js/lib/decoder.js:865:7)
+    at constructor.copyToImageData (/Volumes/GSPOT/jht-g/projects/poster/photohacker/aa/node/node_modules/jpeg-js/lib/decoder.js:982:23)
+    at Object.decode [as image/jpeg] (/Volumes/GSPOT/jht-g/projects/poster/photohacker/aa/node/node_modules/jpeg-js/lib/decoder.js:1122:11)
+    at Jimp.parseBitmap (/Volumes/GSPOT/jht-g/projects/poster/photohacker/aa/node/node_modules/@jimp/core/dist/utils/image-bitmap.js:196:53)
+    at Jimp.parseBitmap (/Volumes/GSPOT/jht-g/projects/poster/photohacker/aa/node/node_modules/@jimp/core/dist/index.js:431:32)
+    at /Volumes/GSPOT/jht-g/projects/poster/photohacker/aa/node/node_modules/@jimp/core/dist/index.js:373:15
+    at FSReqWrap.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:53:3) methodName: 'constructor' }
+
+
+
+https://www.loc.gov/pictures/collection/anedub/
+African American Photographs Assembled for 1900 Paris Exposition
+
+http://www.loc.gov/pictures/collection/anedub/item/00651763/
+
+
+
+https://www.npmjs.com/package/jimp
+https://github.com/oliver-moran/jimp/tree/master/packages/jimp
+
+out of memory on image 149
+
+
+// Jimp.FONT_SANS_32_BLACK; // Open Sans, 32px, black
+// Jimp.FONT_SANS_64_BLACK; // Open Sans, 64px, black
+// Jimp.FONT_SANS_128_BLACK; // Open Sans, 128px, black
+function phack_run_1() {
+  var p1 = jimp.loadFont(jimp.FONT_SANS_64_BLACK);
+  var p2 = jimp.read(in_path);
+  Promise.all([p1, p2])
+    .then((result) => {
+      phack_img(result[0], result[1], 0);
+    })
+    .catch((err) => {
+      console.log('err', err);
+    });
+}
+
+function do_files(files) {
+  for (const fname of files) {
+    console.log('fname', fname);
+    if (exclude(fname)) continue;
+    fcount++;
+    const src = path.resolve(wpath, fname, 'full.jpg');
+    const nfame = fname + '.jpg';
+    const dest = path.resolve(opath, nfame);
+    fs.copyFileSync(src, dest);
+  }
+}
+
+
+
 https://www.youtube.com/watch?v=3X8drKsdf5E
 7 Essential Knots You Need To Know
 
